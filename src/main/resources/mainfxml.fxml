@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-background-color 0x000000cc?>
+
+<AnchorPane id="AnchorPane" fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color : black;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.Controller">
+  <children>
+    <AnchorPane layoutX="600.0" layoutY="450.0" prefHeight="200.0" prefWidth="200.0" />
+    <AnchorPane layoutX="600.0" layoutY="450.0" prefHeight="200.0" prefWidth="200.0" />
+    <AnchorPane fx:id="authPage" layoutX="0.0" layoutY="0.0" prefHeight="900.0" prefWidth="1200.0" style="&#10;">
+      <children>
+        <PasswordField fx:id="passwordField" layoutX="443.0" layoutY="361.0" prefWidth="343.0" />
+        <Label layoutX="443.0" layoutY="340.0" text="Пароль">
+          <font>
+            <Font name="Arial Bold Italic" size="18.0" fx:id="x1" />
+          </font>
+          <textFill>
+            <Color blue="0.000" green="0.720" red="1.000" fx:id="x2" />
+          </textFill>
+        </Label>
+        <Button fx:id="enterAuthButton" font="$x1" layoutX="649.0" layoutY="475.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="137.0" text="Войти" />
+        <Button fx:id="goBackAuthButton" font="$x1" layoutX="443.0" layoutY="475.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="137.0" text="Назад" />
+        <Label font="$x1" layoutX="443.0" layoutY="262.0" text="Логин" textFill="$x2" />
+        <TextField fx:id="loginField" layoutX="443.0" layoutY="283.0" prefWidth="343.0" />
+        <RadioButton fx:id="userRadioButton" layoutX="649.0" layoutY="430.0" mnemonicParsing="false" text="Пользователь" textFill="$x2">
+          <font>
+            <Font name="Arial Bold Italic" size="15.0" fx:id="x3" />
+          </font>
+        </RadioButton>
+        <RadioButton fx:id="adminRadioButton" font="$x3" layoutX="443.0" layoutY="430.0" mnemonicParsing="false" text="Администратор" textFill="$x2" />
+      </children>
+    </AnchorPane>
+  </children>
+</AnchorPane>
