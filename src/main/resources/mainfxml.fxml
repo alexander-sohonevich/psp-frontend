@@ -2,37 +2,168 @@
 
 <?import java.lang.*?>
 <?import java.util.*?>
+<?import javafx.collections.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
-<?scenebuilder-background-color 0x000000cc?>
 
-<AnchorPane id="AnchorPane" fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color : black;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.Controller">
+<AnchorPane id="AnchorPane" fx:id="mainAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color : #B8B8B8;&#10;&#10;&#10;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="UI.Controller">
   <children>
-    <AnchorPane layoutX="600.0" layoutY="450.0" prefHeight="200.0" prefWidth="200.0" />
-    <AnchorPane layoutX="600.0" layoutY="450.0" prefHeight="200.0" prefWidth="200.0" />
-    <AnchorPane fx:id="authPage" layoutX="0.0" layoutY="0.0" prefHeight="900.0" prefWidth="1200.0" style="&#10;">
+    <AnchorPane id="userMainPage" fx:id="userAnchorPane" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
       <children>
-        <PasswordField fx:id="passwordField" layoutX="443.0" layoutY="361.0" prefWidth="343.0" />
-        <Label layoutX="443.0" layoutY="340.0" text="Пароль">
+        <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+          <bottom>
+            <Pane prefHeight="360.0" prefWidth="1920.0" style="-fx-border-color: black;&#10;">
+              <children>
+                <TextField fx:id="brandField" layoutX="80.0" layoutY="43.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="80.0" layoutY="26.0" prefWidth="250.0" text="Бренд">
+                  <font>
+                    <Font name="Arial Black" size="12.0" fx:id="x2" />
+                  </font>
+                </Label>
+                <TextField fx:id="modelField" layoutX="80.0" layoutY="104.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="80.0" layoutY="88.0" prefWidth="250.0" text="Модель" />
+                <TextField fx:id="yearOfIssueField" layoutX="81.0" layoutY="165.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="81.0" layoutY="149.0" prefWidth="250.0" text="Год выпуска" />
+                <TextField fx:id="costField" layoutX="81.0" layoutY="225.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="81.0" layoutY="209.0" prefWidth="250.0" text="Стоимость в рублях" />
+                <TextField fx:id="vinCodeField" layoutX="81.0" layoutY="281.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="81.0" layoutY="265.0" prefWidth="250.0" text="VIN-код" />
+                <TextField fx:id="bodyTypeField" layoutX="457.0" layoutY="103.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="457.0" layoutY="87.0" prefWidth="250.0" text="Тип кузова" />
+                <TextField fx:id="bodyColorField" layoutX="457.0" layoutY="164.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="457.0" layoutY="148.0" prefWidth="250.0" text="Цвет кузова" />
+                <Button id="addCar" fx:id="addCarButton" layoutX="1733.0" layoutY="165.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: white;&#10;-fx-font-family: &quot;Arial Narrow&quot;;&#10;-fx-font-weight: bold;&#10;-fx-background-color : #585858;&#10;-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );&#10;" text="Добавить автомобиль" />
+                <TextField fx:id="numberOfDoorsField" layoutX="458.0" layoutY="225.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="458.0" layoutY="209.0" prefWidth="250.0" text="Количество дверей" />
+                <TextField fx:id="salonField" layoutX="809.0" layoutY="104.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="809.0" layoutY="88.0" prefWidth="250.0" text="Материал салона" />
+                <TextField fx:id="salonColorField" layoutX="809.0" layoutY="165.0" prefHeight="30.0" prefWidth="250.0" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="809.0" layoutY="148.0" prefWidth="250.0" text="Цвет салона" />
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="809.0" layoutY="210.0" prefWidth="250.0" text="Мультимедийная система" />
+                <ChoiceBox fx:id="multimediaSystemField" layoutX="809.0" layoutY="226.0" prefHeight="30.0" prefWidth="250.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="1130.0" layoutY="149.0" prefWidth="250.0" text="Тип трансмиссии" />
+                <ChoiceBox fx:id="transmissionField" layoutX="1130.0" layoutY="165.0" prefHeight="30.0" prefWidth="250.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <Label alignment="CENTER" contentDisplay="CENTER" font="$x2" layoutX="1431.0" layoutY="148.0" prefWidth="250.0" text="Диаметр колес" />
+                <ChoiceBox fx:id="wheelDiameterField" layoutX="1431.0" layoutY="165.0" prefHeight="30.0" prefWidth="250.0">
+                  <items>
+                    <FXCollections fx:factory="observableArrayList">
+                      <String fx:value="Item 1" />
+                      <String fx:value="Item 2" />
+                      <String fx:value="Item 3" />
+                    </FXCollections>
+                  </items>
+                </ChoiceBox>
+                <Label layoutX="694.0" layoutY="7.0" text="Добавление нового автомобиля">
+                  <font>
+                    <Font name="Segoe UI Bold" size="30.0" />
+                  </font>
+                </Label>
+                <Label id="addCar" fx:id="addCarWarning" alignment="CENTER" layoutX="1130.0" layoutY="96.0" prefWidth="551.0" text="Оповещение" textFill="RED">
+                  <font>
+                    <Font name="Arial" size="20.0" />
+                  </font>
+                </Label>
+              </children>
+            </Pane>
+          </bottom>
+          <center>
+            <Pane prefHeight="200.0" prefWidth="200.0" />
+          </center>
+          <left>
+            <Pane prefHeight="680.0" prefWidth="360.0">
+              <children>
+                <VBox layoutX="14.0" layoutY="93.0" prefHeight="360.0" prefWidth="210.0" spacing="30.0">
+                  <children>
+                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Button" />
+                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Button" />
+                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Button" />
+                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Button" />
+                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Button" />
+                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Button" />
+                    <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" text="Button" />
+                  </children>
+                </VBox>
+                <Label layoutX="166.0" layoutY="39.0" text="Label" />
+              </children>
+            </Pane>
+          </left>
+          <right>
+            <Pane prefHeight="680.0" prefWidth="360.0" />
+          </right>
+          <top>
+            <Pane prefHeight="140.0" prefWidth="1920.0" />
+          </top>
+        </BorderPane>
+      </children>
+    </AnchorPane>
+    <AnchorPane id="mainPanel" fx:id="adminAnchorPane" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+      <children>
+        <TabPane prefHeight="200.0" prefWidth="753.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+          <tabs>
+            <Tab text="Добавление пользователей">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="Untitled Tab 2">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+            <Tab text="Untitled Tab">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
+      </children>
+    </AnchorPane>
+    <AnchorPane fx:id="authPage" minHeight="312.0" minWidth="373.0" prefHeight="355.0" prefWidth="374.0" style="&#10;" visible="false" AnchorPane.bottomAnchor="403.0" AnchorPane.leftAnchor="773.5" AnchorPane.rightAnchor="772.5" AnchorPane.topAnchor="302.0">
+      <children>
+        <PasswordField fx:id="passwordField" alignment="CENTER" layoutX="18.0" layoutY="182.0" maxHeight="22.0" maxWidth="343.0" minHeight="22.0" minWidth="343.0" prefHeight="22.0" prefWidth="343.0" />
+        <Label alignment="CENTER" contentDisplay="CENTER" disable="false" labelFor="$passwordField" layoutX="154.0" layoutY="162.0" maxHeight="21.0" maxWidth="67.0" minHeight="21.0" minWidth="67.0" prefHeight="21.0" prefWidth="67.0" text="Пароль" textOverrun="CLIP">
           <font>
             <Font name="Arial Bold Italic" size="18.0" fx:id="x1" />
           </font>
-          <textFill>
-            <Color blue="0.000" green="0.720" red="1.000" fx:id="x2" />
-          </textFill>
         </Label>
-        <Button fx:id="enterAuthButton" font="$x1" layoutX="649.0" layoutY="475.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="137.0" text="Войти" />
-        <Button fx:id="goBackAuthButton" font="$x1" layoutX="443.0" layoutY="475.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="137.0" text="Назад" />
-        <Label font="$x1" layoutX="443.0" layoutY="262.0" text="Логин" textFill="$x2" />
-        <TextField fx:id="loginField" layoutX="443.0" layoutY="283.0" prefWidth="343.0" />
-        <RadioButton fx:id="userRadioButton" layoutX="649.0" layoutY="430.0" mnemonicParsing="false" text="Пользователь" textFill="$x2">
+        <Button fx:id="enterAuthButton" font="$x1" layoutX="207.0" layoutY="296.0" maxHeight="49.0" maxWidth="154.0" minHeight="49.0" minWidth="154.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="154.0" style="-fx-text-fill: white;&#10;-fx-font-family: &quot;Arial Narrow&quot;;&#10;-fx-font-weight: bold;&#10;-fx-background-color : #585858;&#10;-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Войти" textFill="WHITE" />
+        <Button fx:id="goBackAuthButton" font="$x1" layoutX="18.0" layoutY="296.0" maxHeight="49.0" maxWidth="154.0" minHeight="49.0" minWidth="154.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="154.0" style="-fx-text-fill: white;&#10;-fx-font-family: &quot;Arial Narrow&quot;;&#10;-fx-font-weight: bold;&#10;-fx-background-color : #585858;&#10;-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );" text="Выйти" textFill="WHITE" />
+        <Label alignment="CENTER" contentDisplay="CENTER" disable="false" font="$x1" layoutX="162.0" layoutY="84.0" maxHeight="21.0" maxWidth="55.0" minHeight="21.0" minWidth="55.0" prefHeight="21.0" prefWidth="55.0" text="Логин" textFill="BLACK" textOverrun="CLIP">
+          <labelFor>
+            <TextField fx:id="loginField" alignment="CENTER" layoutX="16.0" layoutY="105.0" prefWidth="343.0" text="" />
+          </labelFor>
+        </Label>
+        <RadioButton fx:id="userRadioButton" alignment="TOP_LEFT" contentDisplay="LEFT" focusTraversable="false" layoutX="221.0" layoutY="251.0" maxHeight="18.0" maxWidth="154.0" minHeight="18.0" minWidth="137.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="140.0" text="Пользователь" textFill="BLACK">
           <font>
             <Font name="Arial Bold Italic" size="15.0" fx:id="x3" />
           </font>
         </RadioButton>
-        <RadioButton fx:id="adminRadioButton" font="$x3" layoutX="443.0" layoutY="430.0" mnemonicParsing="false" text="Администратор" textFill="$x2" />
+        <RadioButton fx:id="adminRadioButton" alignment="TOP_LEFT" contentDisplay="LEFT" focusTraversable="false" font="$x3" layoutX="18.0" layoutY="251.0" maxHeight="18.0" maxWidth="158.0" minHeight="18.0" minWidth="154.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="158.0" text="Администратор" textFill="BLACK" />
+        <Label fx:id="authTitle" alignment="CENTER" contentDisplay="CENTER" disable="false" layoutX="18.0" layoutY="14.0" maxHeight="21.0" maxWidth="343.0" minHeight="21.0" minWidth="343.0" prefHeight="21.0" prefWidth="343.0" text="Оповещения" textOverrun="CLIP" visible="true" wrapText="false">
+          <font>
+            <Font name="Arial Bold" size="18.0" />
+          </font>
+        </Label>
+        <fx:reference source="loginField" />
       </children>
     </AnchorPane>
   </children>
